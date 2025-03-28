@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness & Health Club</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  
+  <style>
+    /* Base Styles */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    :root {
+      /* Colors */
+      --health-green-50: #f2fce2;
+      --health-green-100: #e0f7c5;
+      --health-green-200: #c5ee95;
+      --health-green-300: #a6e05e;
+      --health-green-400: #8bcf36;
+      --health-green-500: #4CAF50; /* Primary health green */
+      --health-green-600: #37843f;
+      --health-green-700: #2c6934;
+      --health-green-800: #24532a;
+      --health-green-900: #1f4725;
+      
+      --white: #ffffff;
+      --black: #000000;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--gray-800);
+      line-height: 1.6;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+   
+    /* Utility Classes */
+    .bg-white { background-color: var(--white); }
+    .bg-gray-50 { background-color: var(--gray-50); }
+    .bg-gray-900 { background-color: var(--gray-900); }
+    .text-white { color: var(--white); }
+    .text-gray-400 { color: var(--gray-400); }
+    .text-gray-500 { color: var(--gray-500); }
+    .text-gray-600 { color: var(--gray-600); }
+    .text-healthgreen-500 { color: var(--health-green-500); }
+    .font-medium { font-weight: 500; }
+    .font-semibold { font-weight: 600; }
+    .font-bold { font-weight: 700; }
+    .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+    .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+    .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+    .px-4 { padding-left: 1rem; padding-right: 1rem; }
+    .px-5 { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .px-8 { padding-left: 2rem; padding-right: 2rem; }
+    .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+    .mb-1 { margin-bottom: 0.25rem; }
+    .mb-2 { margin-bottom: 0.5rem; }
+    .mb-3 { margin-bottom: 0.75rem; }
+    .mb-4 { margin-bottom: 1rem; }
+    .mb-5 { margin-bottom: 1.25rem; }
+    .mb-6 { margin-bottom: 1.5rem; }
+    .mb-8 { margin-bottom: 2rem; }
+    .mb-10 { margin-bottom: 2.5rem; }
+    .mb-12 { margin-bottom: 3rem; }
+    .mb-16 { margin-bottom: 4rem; }
+    .mt-2 { margin-top: 0.5rem; }
+    .mt-3 { margin-top: 0.75rem; }
+    .mt-8 { margin-top: 2rem; }
+    .mt-10 { margin-top: 2.5rem; }
+    .mt-12 { margin-top: 3rem; }
+    .ml-2 { margin-left: 0.5rem; }
+    .ml-3 { margin-left: 0.75rem; }
+    .mr-2 { margin-right: 0.5rem; }
+    .mr-3 { margin-right: 0.75rem; }
+    .p-2 { padding: 0.5rem; }
+    .p-3 { padding: 0.75rem; }
+    .p-4 { padding: 1rem; }
+    .p-6 { padding: 1.5rem; }
+    .pt-3 { padding-top: 0.75rem; }
+    .rounded-full { border-radius: 9999px; }
+    .rounded-lg { border-radius: 0.5rem; }
+    .rounded-xl { border-radius: 0.75rem; }
+    .rounded-2xl { border-radius: 1rem; }
+    .text-center { text-align: center; }
+    .text-sm { font-size: 0.875rem; }
+    .text-lg { font-size: 1.125rem; }
+    .text-xl { font-size: 1.25rem; }
+    .text-2xl { font-size: 1.5rem; }
+    .text-3xl { font-size: 1.875rem; }
+    .text-4xl { font-size: 2.25rem; }
+    .text-6xl { font-size: 3.75rem; }
+    .h-4 { height: 1rem; }
+    .h-5 { height: 1.25rem; }
+    .h-6 { height: 1.5rem; }
+    .h-80 { height: 20rem; }
+    .h-56 { height: 14rem; }
+    .h-full { height: 100%; }
+    .w-4 { width: 1rem; }
+    .w-5 { width: 1.25rem; }
+    .w-6 { width: 1.5rem; }
+    .w-full { width: 100%; }
+    .border { border-width: 1px; }
+    .border-t { border-top-width: 1px; }
+    .border-gray-100 { border-color: var(--gray-100); }
+    .border-gray-200 { border-color: var(--gray-200); }
+    .border-gray-800 { border-color: var(--gray-800); }
+    .border-healthgreen-500 { border-color: var(--health-green-500); }
+    .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+    .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+    .overflow-hidden { overflow: hidden; }
+    .grid { display: grid; }
+    .flex { display: flex; }
+    .inline-flex { display: inline-flex; }
+    .space-x-2 > * + * { margin-left: 0.5rem; }
+    .space-x-3 > * + * { margin-left: 0.75rem; }
+    .space-x-4 > * + * { margin-left: 1rem; }
+    .space-x-6 > * + * { margin-left: 1.5rem; }
+    .space-x-8 > * + * { margin-left: 2rem; }
+    .space-y-3 > * + * { margin-top: 0.75rem; }
+    .space-y-4 > * + * { margin-top: 1rem; }
+    .items-start { align-items: flex-start; }
+    .items-center { align-items: center; }
+    .justify-center { justify-content: center; }
+    .justify-between { justify-content: space-between; }
+    .shrink-0 { flex-shrink: 0; }
+    .relative { position: relative; }
+    .absolute { position: absolute; }
+    .fixed { position: fixed; }
+    .top-0 { top: 0; }
+    .top-1\/2 { top: 50%; }
+    .bottom-8 { bottom: 2rem; }
+    .left-0 { left: 0; }
+    .left-1\/2 { left: 50%; }
+    .left-4 { left: 1rem; }
+    .right-0 { right: 0; }
+    .right-4 { right: 1rem; }
+    .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+    .z-0 { z-index: 0; }
+    .z-10 { z-index: 10; }
+    .z-20 { z-index: 20; }
+    .z-30 { z-index: 30; }
+    .z-50 { z-index: 50; }
+    .transform { transform: translateX(-50%) translateY(-50%); }
+    .transform-gpu { transform: translateX(-50%); }
+    .transition-colors { transition-property: background-color, border-color, color, fill, stroke; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+    .transition-transform { transition-property: transform; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+    .transition-opacity { transition-property: opacity; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+    .transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+    .duration-300 { transition-duration: 300ms; }
+    .duration-500 { transition-duration: 500ms; }
+    .duration-1000 { transition-duration: 1000ms; }
+    .object-cover { object-fit: cover; }
+    .object-contain { object-fit: contain; }
+    .opacity-0 { opacity: 0; }
+    .opacity-100 { opacity: 1; }
+    .grayscale { filter: grayscale(100%); }
+    .hover\:grayscale-0:hover { filter: grayscale(0); }
+    .backdrop-blur-sm { backdrop-filter: blur(4px); }
+    .-mt-6 { margin-top: -1.5rem; }
+    .hidden { display: none; }
+    .hover\:bg-healthgreen-50:hover { background-color: var(--health-green-50); }
+    .hover\:bg-healthgreen-500:hover { background-color: var(--health-green-500); }
+    .hover\:bg-healthgreen-600:hover { background-color: var(--health-green-600); }
+    .hover\:bg-white\/30:hover { background-color: rgba(255, 255, 255, 0.3); }
+    .hover\:text-healthgreen-500:hover { color: var(--health-green-500); }
+    .hover\:text-healthgreen-600:hover { color: var(--health-green-600); }
+    .bg-healthgreen-100 { background-color: var(--health-green-100); }
+    .bg-healthgreen-500 { background-color: var(--health-green-500); }
+    .bg-white\/20 { background-color: rgba(255, 255, 255, 0.2); }
+    .bg-black\/40 { background-color: rgba(0, 0, 0, 0.4); }
+    .text-xs { font-size: 0.75rem; }
+    .hover\:scale-110:hover { transform: scale(1.1); }
+    .hover\:-translate-y-2:hover { transform: translateY(-0.5rem); }
+    .hover\:shadow-xl:hover { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+    .max-w-2xl { max-width: 42rem; }
+    .max-w-3xl { max-width: 48rem; }
+    .max-w-4xl { max-width: 56rem; }
+    .max-h-16 { max-height: 4rem; }
+    .max-w-full { max-width: 100%; }
+    .tracking-tight { letter-spacing: -0.025em; }
+    
+    /* Navbar */
+    .nav_menu{
+      color: #fff;
+    }
+
+    nav {
+      transition: all 0.3s ease;
+      padding: 10px;
+    }
+    
+    nav.scrolled {
+      background-color: var(--health-green-500);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    /* Hero Slider */
+    .hero-slider-container {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Animation */
+    .animated {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Mobile Responsive */
+    @media (min-width: 768px) {
+      .md\:flex { display: flex; }
+      .md\:hidden { display: none; }
+      .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .md\:text-2xl { font-size: 1.5rem; }
+      .md\:text-4xl { font-size: 2.25rem; }
+      .md\:text-6xl { font-size: 3.75rem; }
+      .md\:justify-between { justify-content: space-between; }
+      .md\:justify-end { justify-content: flex-end; }
+      .md\:mb-0 { margin-bottom: 0; }
+      .md\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .md\:h-\[700px\] { height: 700px; }
+    }
+    
+    @media (min-width: 1024px) {
+      .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .lg\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    }
+    
+    img {
+     transition: transform 0.3s ease-in-out;
+    }
+
+    img:hover {
+    	transform: scale(1.1); /* Zoom in effect */
+    }
+    .menu_btn:hover{
+      border: 1ps solid var(--white);
+      color: var(--health-green-600);
+    }
+
+
+    /* Animation Styles */
+    .subscription-plans, .dietician-intro, .team-section, .partners-section, .blog-section {
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="min-h-screen">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-4">
+      <div class="container mx-auto px-4 md:px-6 flex items-center justify-between">
+        <a href="/" class="flex items-center space-x-2">
+          <img src="assets/logo/logo_light.png" alt="Logo" class="h-10 w-auto md:h-12 lg:h-16">
+        </a>        
+
+        <!-- Desktop Navigation -->
+        <div class="nav_menu hidden md:flex items-center space-x-8">
+          <a href="/" class="text-foreground hover:text-healthgreen-500 font-medium transition-colors">Home</a>
+          <a href="/about" class="text-foreground hover:text-healthgreen-500 font-medium transition-colors">About</a>
+          <a href="/" class="text-foreground hover:text-healthgreen-500 font-medium transition-colors">Hotel</a>
+          <a href="/" class="text-foreground hover:text-healthgreen-500 font-medium transition-colors">Blog</a>
+          <a href="/" class="text-foreground hover:text-healthgreen-500 font-medium transition-colors">Contact</a>
+          <button class="menu_btn bg-white text-healthgreen-500 px-5 py-2 rounded-full hover:bg-healthgreen-600 transition-colors">
+            Get Started
+          </button>
+        </div>
+
+        <!-- Mobile Navigation Button -->
+        <button class="md:hidden text-foreground">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="md:hidden bg-white py-4 px-4 shadow-lg hidden">
+        <div class="flex flex-col space-y-4">
+          <a href="/" class="text-foreground hover:text-healthgreen-500 font-medium transition-colors py-2">Home</a>
+          <a href="/about" class="text-foreground hover:text-healthgreen-500 font-medium transition-colors py-2">About</a>
+          <a href="/hotel" class="text-foreground hover:text-healthgreen-500 font-medium transition-colors py-2">Hotel</a>
+          <a href="/blog" class="text-foreground hover:text-healthgreen-500 font-medium transition-colors py-2">Blog</a>
+          <a href="/contact" class="text-foreground hover:text-healthgreen-500 font-medium transition-colors py-2">Contact</a>
+          <button class="bg-healthgreen-500 text-white px-5 py-2 rounded-full hover:bg-healthgreen-600 transition-colors mt-2">
+            Get Started
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Slider -->
+    <div class="hero-slider-container relative h-screen md:h-[700px] w-full">
+      <!-- Slide 1 -->
+      <div class="absolute top-0 left-0 w-full h-full transition-opacity duration-1000 opacity-100 z-10">
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <img
+          src="assets/hero/hero_1.jpg"
+          alt="Welcome to The Healthy Club"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-20 px-4">
+          <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
+            Welcome to The Healthy Club
+          </h1>
+          <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl">
+            Your journey to better health starts here
+          </p>
+          <button class="bg-healthgreen-500 text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-healthgreen-600 transition-colors">
+            Join Now
+          </button>
+        </div>
+      </div>
+
+      <!-- Slides 2-4 (opacity-0 since they're not active) -->
+      <div class="absolute top-0 left-0 w-full h-full transition-opacity duration-1000 opacity-0 z-0">
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <img
+          src="assets/hero/hero_2.jpg"
+          alt="Personalized Meal Plans"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-20 px-4">
+          <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
+            Personalized Meal Plans
+          </h1>
+          <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl">
+            Tailored nutrition for your specific health needs
+          </p>
+          <button class="bg-healthgreen-500 text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-healthgreen-600 transition-colors">
+            Join Now
+          </button>
+        </div>
+      </div>
+
+      <div class="absolute top-0 left-0 w-full h-full transition-opacity duration-1000 opacity-0 z-0">
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <img
+          src="assets/hero/hero_3.jpg"
+          alt="Expert Dietitian Support"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-20 px-4">
+          <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
+            Expert Dietitian Support
+          </h1>
+          <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl">
+            Get guidance from certified professionals
+          </p>
+          <button class="bg-healthgreen-500 text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-healthgreen-600 transition-colors">
+            Join Now
+          </button>
+        </div>
+      </div>
+
+      <div class="absolute top-0 left-0 w-full h-full transition-opacity duration-1000 opacity-0 z-0">
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <img
+          src="assets/hero/hero_4.jpg"
+          alt="Transform Your Lifestyle"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-20 px-4">
+          <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
+            Transform Your Lifestyle
+          </h1>
+          <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl">
+            Sustainable health habits for long-term wellbeing
+          </p>
+          <button class="bg-healthgreen-500 text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-healthgreen-600 transition-colors">
+            Join Now
+          </button>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <button
+        class="absolute left-4 top-1/2 -mt-6 z-30 bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/30 transition-colors"
+        aria-label="Previous slide"
+      >
+        <i class="fa-solid fa-chevron-left text-white h-6 w-6"></i>
+      </button>
+      
+      <button
+        class="absolute right-4 top-1/2 -mt-6 z-30 bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/30 transition-colors"
+        aria-label="Next slide"
+      >
+        <i class="fa-solid fa-chevron-right text-white h-6 w-6"></i>
+      </button>
+
+      <!-- Slide Indicators -->
+      <div class="absolute bottom-8 left-1/2 transform-gpu z-30 flex space-x-2">
+        <button
+          class="w-3 h-3 rounded-full transition-colors bg-healthgreen-500"
+          aria-label="Go to slide 1"
+        ></button>
+        <button
+          class="w-3 h-3 rounded-full transition-colors bg-white/50"
+          aria-label="Go to slide 2"
+        ></button>
+        <button
+          class="w-3 h-3 rounded-full transition-colors bg-white/50"
+          aria-label="Go to slide 3"
+        ></button>
+        <button
+          class="w-3 h-3 rounded-full transition-colors bg-white/50"
+          aria-label="Go to slide 4"
+        ></button>
+      </div>
+    </div>
+
+    <!-- Subscription Plans Section -->
+    <div class="py-20 bg-gray-50 subscription-plans">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Subscription Plans</h2>
+          <p class="">
+            Choose the perfect plan to support your health journey. From personalized meal plans
+            to one-on-one coaching, we have options for every need and budget.
+          </p>
+        </div>
+
+        <div class="mb-16">
+          <h3 class="text-2xl font-semibold text-center mb-10">Diabetic Meal Plans</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Plan 1 -->
+            <div class="subscription-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+              <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">Individual Plan 1</h4>
+                <p class="text-gray-500 mb-4">4 Weeks</p>
+                <div class="mb-6">
+                  <span class="text-3xl font-bold">$199</span>
+                </div>
+                <p class="text-gray-600 mb-6">Perfect for beginners starting their health journey</p>
+                <button class="w-full py-3 rounded-lg font-medium transition-colors bg-white text-healthgreen-500 border border-healthgreen-500 hover:bg-healthgreen-50">
+                  Get Started
+                </button>
+              </div>
+              <div class="bg-gray-50 p-6">
+                <h5 class="font-semibold mb-4">What's included:</h5>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">Personalized Meal Plans every 2 weeks</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">Wellness/Workout Manual</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">One-on-one Coaching with Registered Dietitian</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">Tricks to adopt healthy eating habits</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">Healthy Groceries List</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">Weekly Follow Up</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-times text-gray-400 mr-2"></i>
+                    <span class="text-gray-400">Access to Private Chef</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-times text-gray-400 mr-2"></i>
+                    <span class="text-gray-400">Access to Gym Instructor</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Plan 2 (Popular) -->
+            <div class="subscription-card bg-white rounded-xl shadow-lg overflow-hidden border-2 border-healthgreen-500 relative">
+              <div class="bg-healthgreen-500 text-white py-1 px-4 text-sm font-semibold absolute top-0 right-0 rounded-bl-lg">
+                Most Popular
+              </div>
+              <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">Individual Plan 2</h4>
+                <p class="text-gray-500 mb-4">12 Weeks</p>
+                <div class="mb-6">
+                  <span class="text-3xl font-bold">$499</span>
+                </div>
+                <p class="text-gray-600 mb-6">Our most popular comprehensive plan for serious results</p>
+                <button class="w-full py-3 rounded-lg font-medium transition-colors bg-healthgreen-500 text-white hover:bg-healthgreen-600">
+                  Get Started
+                </button>
+              </div>
+              <div class="bg-gray-50 p-6">
+                <h5 class="font-semibold mb-4">What's included:</h5>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">Personalized Meal Plans every 2 weeks</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">Wellness/Workout Manual</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">One-on-one Coaching with Registered Dietitian</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">Tricks to adopt healthy eating habits</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">Healthy Groceries List</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">Free Access to a Registered Dietitian</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-times text-gray-400 mr-2"></i>
+                    <span class="text-gray-400">Access to Private Chef</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-times text-gray-400 mr-2"></i>
+                    <span class="text-gray-400">Access to Gym Instructor</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Plan 3 -->
+            <div class="subscription-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+              <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">Individual Plan 3</h4>
+                <p class="text-gray-500 mb-4">Monthly Subscription</p>
+                <div class="mb-6">
+                  <span class="text-3xl font-bold">$799</span>
+                </div>
+                <p class="text-gray-600 mb-6">Premium experience with complete health transformation</p>
+                <button class="w-full py-3 rounded-lg font-medium transition-colors bg-white text-healthgreen-500 border border-healthgreen-500 hover:bg-healthgreen-50">
+                  Get Started
+                </button>
+              </div>
+              <div class="bg-gray-50 p-6">
+                <h5 class="font-semibold mb-4">What's included:</h5>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">Everything in Individual Plan 2</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">Access to a Private Dietitian</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">Access to a Private Chef</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">Access to a Gym Instructor</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">Personalized health journey</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">Priority support</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">Monthly progress review</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">Exclusive wellness resources</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-semibold text-center mb-10">One-time Meal Plans</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <!-- One-time Plan 1 -->
+            <div class="subscription-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+              <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">2-Week Diabetic Meal Plan</h4>
+                <p class="text-gray-500 mb-4">One-time Purchase</p>
+                <div class="mb-6">
+                  <span class="text-3xl font-bold">$49</span>
+                </div>
+                <p class="text-gray-600 mb-6">Pre-designed meal plan for diabetes management</p>
+                <button class="w-full py-3 rounded-lg font-medium transition-colors bg-white text-healthgreen-500 border border-healthgreen-500 hover:bg-healthgreen-50">
+                  Purchase Now
+                </button>
+              </div>
+              <div class="bg-gray-50 p-6">
+                <h5 class="font-semibold mb-4">What's included:</h5>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">14 days of diabetic-friendly meal options</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">Nutritional information for each meal</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">Shopping lists</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">Recipe instructions</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-times text-gray-400 mr-2"></i>
+                    <span class="text-gray-400">Not personalized to individual needs</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-times text-gray-400 mr-2"></i>
+                    <span class="text-gray-400">No dietitian consultation</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-times text-gray-400 mr-2"></i>
+                    <span class="text-gray-400">No follow-up support</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-times text-gray-400 mr-2"></i>
+                    <span class="text-gray-400">No custom adjustments</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- One-time Plan 2 -->
+            <div class="subscription-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+              <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">2-Week PCOS Meal Plan</h4>
+                <p class="text-gray-500 mb-4">One-time Purchase</p>
+                <div class="mb-6">
+                  <span class="text-3xl font-bold">$49</span>
+                </div>
+                <p class="text-gray-600 mb-6">Pre-designed meal plan for PCOS management</p>
+                <button class="w-full py-3 rounded-lg font-medium transition-colors bg-white text-healthgreen-500 border border-healthgreen-500 hover:bg-healthgreen-50">
+                  Purchase Now
+                </button>
+              </div>
+              <div class="bg-gray-50 p-6">
+                <h5 class="font-semibold mb-4">What's included:</h5>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">14 days of PCOS-friendly meal options</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">Nutritional information for each meal</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">Shopping lists</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-healthgreen-500 mr-2"></i>
+                    <span class="text-gray-700">Recipe instructions</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-times text-gray-400 mr-2"></i>
+                    <span class="text-gray-400">Not personalized to individual needs</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-times text-gray-400 mr-2"></i>
+                    <span class="text-gray-400">No dietitian consultation</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-times text-gray-400 mr-2"></i>
+                    <span class="text-gray-400">No follow-up support</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-times text-gray-400 mr-2"></i>
+                    <span class="text-gray-400">No custom adjustments</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dietician Intro Section -->
+    <div class="py-20 bg-white dietician-intro">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div class="rounded-2xl overflow-hidden shadow-xl">
+            <img
+              src="assets/hero/hero_3.jpg"
+              alt="Lead Dietician"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+            />
+          </div>
+          
+          <div>
+            <div class="inline-block px-4 py-2 bg-healthgreen-100 text-healthgreen-500 rounded-full mb-4">
+              Meet Our Expert
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+              Ndidika Frances
+            </h2>
+            <h3 class="text-xl text-healthgreen-500 font-semibold mb-4">
+              Chief Executive Officer
+            </h3>
+            <p class="text-gray-600 mb-6 text-lg">
+              Ndidika Frances is a Registered Dietitian Nutritionist, healthy cooking expert, and Chef. She specializes in weight management, PCOS, diabetes, hypertension, cancer, and bariatric nutrition.
+            </p>
+            <p class="text-gray-600 mb-6 text-lg">
+              With a professional Chef certificate in Cuisine from Abuja Culinary School, she merges culinary skills with nutrition expertise to create healthy recipes. She holds a B.Sc. in Nutrition and Dietetics from the University of Nigeria, Nsukka, and completed her dietetic training at UNTH, Enugu. In her free time, she enjoys researching and experimenting with new recipes.
+            </p>
+            <div class="flex items-center space-x-6 mt-8">
+              <div class="flex items-center">
+                <div class="bg-healthgreen-100 p-3 rounded-full">
+                  <i class="fa-solid fa-user text-healthgreen-500"></i>
+                </div>
+                <div class="ml-3">
+                  <p class="text-gray-500 text-sm">Clients Helped</p>
+                  <p class="font-bold text-xl">2,500+</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center">
+                <div class="bg-healthgreen-100 p-3 rounded-full">
+                  <i class="fa-solid fa-plus text-healthgreen-500"></i>
+                </div>
+                <div class="ml-3">
+                  <p class="text-gray-500 text-sm">Years Experience</p>
+                  <p class="font-bold text-xl">5+</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team Section -->
+    <div class="py-20 bg-gray-50 team-section">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Meet Our Team</h2>
+          <p class="">
+            Our team of experts is passionate about helping you achieve optimal health through
+            personalized nutrition and lifestyle guidance.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Team Member 1 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2">
+            <div class="h-80 overflow-hidden">
+	      <img 
+		src="assets/team/mrs_deb.jpg" 
+		style="width: 800px; object-fit: cover;" 
+		alt="Mrs. Deborah">
+		class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-1">Deborah Ogwuche</h3>
+              <p class="text-healthgreen-500 font-medium mb-3">Lead Registered Dietitian</p>
+              <p class="text-gray-600 mb-3 line-clamp-3" id="bio-deb">
+    Deborah Ogwuche is a chef, hospitality business leader, and software engineer graduate from Holberton School, Silicon Valley, USA. She is a hospitality/nutrition education expert and a recipient of the Stanford Seed Aspire program for African Entrepreneurs.
+</p>
+<p class="hidden text-gray-600 mb-3" id="full-bio-deb">
+    As the CEO/Manager of Abuja Culinary School, she led the school to having the highest 5-star ratings in Nigeria. A Guinness World Record holder, she is a published author, speaker, mentor, and technology expert, working with several international organizations to advance food technology and nutrition.
+</p>
+<button onclick="toggleBio('deb')" class="text-healthgreen-500 font-medium cursor-pointer hover:underline">
+    Read More
+</button>
+
+
+              <div class="flex space-x-3 pt-3 border-t border-gray-100">
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-healthgreen-500 transition-colors"
+                  aria-label="Deborah Ogwuche's LinkedIn"
+                >
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-healthgreen-500 transition-colors"
+                  aria-label="Deborah Ogwuche's Twitter"
+                >
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-healthgreen-500 transition-colors"
+                  aria-label="Deborah Ogwuche's Instagram"
+                >
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 2 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2">
+            <div class="h-80 overflow-hidden">
+              <img
+                src="assets/team/frances.jpg"
+		style="width: 800px;" 
+                alt="Ndidika Frances"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-1">Ndidika Frances</h3>
+              <p class="text-healthgreen-500 font-medium mb-3">Certified Personal Trainer</p>
+              <p class="text-gray-600 mb-3 line-clamp-3" id="bio-frances">Ndidika Frances is a Registered Dietitian Nutritionist, healthy cooking expert, and Chef. She 			specializes in weight management, PCOS, diabetes, hypertension, cancer, and bariatric nutrition.</p>
+
+		<p class="hidden text-gray-600 mb-3" id="full-bio-frances"> With a professional Chef certificate in Cuisine from Abuja Culinary School, she merges culinary 				skills with nutrition expertise to create healthy recipes. She holds a B.Sc. in Nutrition and Dietetics from the University 			of Nigeria, Nsukka, and completed her dietetic training at UNTH, Enugu. In her free time, she enjoys researching and 				experimenting with new recipes.</p>
+<button onclick="toggleBio('frances')" class="text-healthgreen-500 font-medium cursor-pointer hover:underline">
+    Read More
+</button>
+              <div class="flex space-x-3 pt-3 border-t border-gray-100">
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-healthgreen-500 transition-colors"
+                  aria-label="Ndidika Frances's LinkedIn"
+                >
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-healthgreen-500 transition-colors"
+                  aria-label="Ndidika Frances's Twitter"
+                >
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-healthgreen-500 transition-colors"
+                  aria-label="Ndidika Frances's Instagram"
+                >
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2">
+            <div class="h-80 overflow-hidden">
+              <img
+		src="assets/team/alex.jpg" 
+		style="width: 800px;" 
+		alt="Ubaka Alexander">
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-1">Ubaka Aleander</h3>
+              <p class="text-healthgreen-500 font-medium mb-3">Web. Developer</p>
+              <p class="text-gray-600 mb-5"></p>
+	      <p class="text-gray-600 mb-3 line-clamp-3" id="bio-alex">Ubaka Alexander is a web developer passionate about crafting seamless digital experiences. He 			specializes in front-end and back-end development, creating responsive websites and applications that enhance user engagement.</p>
+              <p class=" hidden text-gray-600 mb-3"  id="full-bio-alex">He has collaborated with various businesses to develop high-performance platforms. Beyond coding, he is 		an avid reader, exploring topics in technology, design, and business. He also has a deep love for music and often draws inspiration 		from different genres while working on projects.</p>
+<button onclick="toggleBio('alex')" class="text-healthgreen-500 font-medium cursor-pointer hover:underline">
+    Read More
+</button>
+              <div class="flex space-x-3 pt-3 border-t border-gray-100">
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-healthgreen-500 transition-colors"
+                  aria-label="Ubaka Alexander's LinkedIn"
+                >
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-healthgreen-500 transition-colors"
+                  aria-label="Ubaka Alexander's Twitter"
+                >
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-healthgreen-500 transition-colors"
+                  aria-label="Ubaka Alexander's Instagram"
+                >
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partners Section -->
+    <div class="py-16 bg-white partners-section">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Partners</h2>
+          <p class="">
+            We work with trusted brands and organizations to provide you with the best resources for your health journey.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+          <!-- Partner 1 -->
+          <div class="flex justify-center items-center p-4 grayscale hover:grayscale-0 transition-all duration-300">
+            <img
+              src="https://placehold.co/200x100/f2fcf2/4CAF50?text=Health+Plus&font=montserrat"
+              alt="Health Plus"
+              class="max-h-16 max-w-full object-contain"
+            />
+          </div>
+          <!-- Partner 2 -->
+          <div class="flex justify-center items-center p-4 grayscale hover:grayscale-0 transition-all duration-300">
+            <img
+              src="https://placehold.co/200x100/f2fcf2/4CAF50?text=Abuja+Culinary+School&font=montserrat"
+              alt="NutriTech"
+              class="max-h-16 max-w-full object-contain"
+            />
+          </div>
+          <!-- Partner 3 -->
+          <div class="flex justify-center items-center p-4 grayscale hover:grayscale-0 transition-all duration-300">
+            <img
+              src="https://placehold.co/200x100/f2fcf2/4CAF50?text=Wellness+Now&font=montserrat"
+              alt="Wellness Now"
+              class="max-h-16 max-w-full object-contain"
+            />
+          </div>
+          <!-- Partner 4 -->
+          <div class="flex justify-center items-center p-4 grayscale hover:grayscale-0 transition-all duration-300">
+            <img
+              src="https://placehold.co/200x100/f2fcf2/4CAF50?text=FitLife&font=montserrat"
+              alt="FitLife"
+              class="max-h-16 max-w-full object-contain"
+            />
+          </div>
+          <!-- Partner 5 -->
+          <div class="flex justify-center items-center p-4 grayscale hover:grayscale-0 transition-all duration-300">
+            <img
+              src="https://placehold.co/200x100/f2fcf2/4CAF50?text=Green+Grocers&font=montserrat"
+              alt="Green Grocers"
+              class="max-h-16 max-w-full object-contain"
+            />
+          </div>
+          <!-- Partner 6 -->
+          <div class="flex justify-center items-center p-4 grayscale hover:grayscale-0 transition-all duration-300">
+            <img
+              src="https://placehold.co/200x100/f2fcf2/4CAF50?text=MediCare&font=montserrat"
+              alt="MediCare"
+              class="max-h-16 max-w-full object-contain"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Section -->
+    <div class="py-20 bg-gray-50 blog-section">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center mb-12">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Latest Articles</h2>
+            <p class="text-lg text-gray-600 max-w-2xl">
+              Expert insights, tips, and advice to support your health journey.
+            </p>
+          </div>
+          <a 
+            href="/blog" 
+            class="hidden md:flex items-center text-healthgreen-500 font-medium hover:text-healthgreen-600 transition-colors"
+          >
+            View all articles
+            <i class="fa-solid fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Blog Post 1 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div class="h-56 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                alt="Understanding Diabetic-Friendly Meal Planning"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <span class="bg-healthgreen-100 text-healthgreen-500 text-xs font-medium px-3 py-1 rounded-full">
+                  Diabetes
+                </span>
+                <span class="text-gray-400 text-sm ml-3">June 15, 2023</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Understanding Diabetic-Friendly Meal Planning</h3>
+              <p class="text-gray-600 mb-5">Learn the key principles of creating balanced meals that help manage blood sugar levels effectively.</p>
+              <a
+                href="/blog/diabetic-meal-planning"
+                class="text-healthgreen-500 font-medium flex items-center hover:text-healthgreen-600 transition-colors"
+              >
+                Read more
+                <i class="fa-solid fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Blog Post 2 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div class="h-56 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                alt="PCOS and Nutrition: What You Need to Know"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <span class="bg-healthgreen-100 text-healthgreen-500 text-xs font-medium px-3 py-1 rounded-full">
+                  PCOS
+                </span>
+                <span class="text-gray-400 text-sm ml-3">May 22, 2023</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">PCOS and Nutrition: What You Need to Know</h3>
+              <p class="text-gray-600 mb-5">Discover how specific dietary changes can help manage PCOS symptoms and improve overall health.</p>
+              <a
+                href="/blog/pcos-nutrition"
+                class="text-healthgreen-500 font-medium flex items-center hover:text-healthgreen-600 transition-colors"
+              >
+                Read more
+                <i class="fa-solid fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Blog Post 3 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div class="h-56 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                alt="The Power of Whole Foods in Your Daily Diet"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <span class="bg-healthgreen-100 text-healthgreen-500 text-xs font-medium px-3 py-1 rounded-full">
+                  Nutrition
+                </span>
+                <span class="text-gray-400 text-sm ml-3">April 10, 2023</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">The Power of Whole Foods in Your Daily Diet</h3>
+              <p class="text-gray-600 mb-5">Explore how incorporating whole foods can transform your health and provide essential nutrients.</p>
+              <a
+                href="/blog/whole-foods-diet"
+                class="text-healthgreen-500 font-medium flex items-center hover:text-healthgreen-600 transition-colors"
+              >
+                Read more
+                <i class="fa-solid fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 text-center md:hidden">
+          <a
+            href="/blog"
+            class="inline-flex items-center text-healthgreen-500 font-medium hover:text-healthgreen-600 transition-colors"
+          >
+            View all articles
+            <i class="fa-solid fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+      <div class="container mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <!-- Company Info -->
+          <div>
+            <a href="/" class="flex items-center space-x-2">
+              <img src="assets/logo/logo_light.png" alt="Logo" class="h-10 w-auto md:h-12 lg:h-16 mb-3">
+            </a> 
+            <p class="text-gray-400 mb-6">
+              Empowering you to take control of your health through personalized nutrition and expert guidance.
+            </p>
+            <div class="flex space-x-4">
+              <a 
+                href="#" 
+                class="bg-gray-800 p-2 rounded-full hover:bg-healthgreen-500 transition-colors"
+                aria-label="Facebook"
+              >
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a 
+                href="#" 
+                class="bg-gray-800 p-2 rounded-full hover:bg-healthgreen-500 transition-colors"
+                aria-label="Twitter"
+              >
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a 
+                href="#" 
+                class="bg-gray-800 p-2 rounded-full hover:bg-healthgreen-500 transition-colors"
+                aria-label="Instagram"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a 
+                href="#" 
+                class="bg-gray-800 p-2 rounded-full hover:bg-healthgreen-500 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+            <ul class="space-y-3">
+              <li>
+                <a href="/" class="text-gray-400 hover:text-healthgreen-500 transition-colors">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="/" class="text-gray-400 hover:text-healthgreen-500 transition-colors">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="/" class="text-gray-400 hover:text-healthgreen-500 transition-colors">
+                  Hotel
+                </a>
+              </li>
+              <li>
+                <a href="/" class="text-gray-400 hover:text-healthgreen-500 transition-colors">
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a href="/" class="text-gray-400 hover:text-healthgreen-500 transition-colors">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Services -->
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Services</h4>
+            <ul class="space-y-3">
+              <li>
+                <a href="/services/diabetic-plans" class="text-gray-400 hover:text-healthgreen-500 transition-colors">
+                  Diabetic Meal Plans
+                </a>
+              </li>
+              <li>
+                <a href="/services/pcos-plans" class="text-gray-400 hover:text-healthgreen-500 transition-colors">
+                  PCOS Meal Plans
+                </a>
+              </li>
+              <li>
+                <a href="/services/dietitian-consultation" class="text-gray-400 hover:text-healthgreen-500 transition-colors">
+                  Dietitian Consultation
+                </a>
+              </li>
+              <li>
+                <a href="/services/workout-plans" class="text-gray-400 hover:text-healthgreen-500 transition-colors">
+                  Workout Plans
+                </a>
+              </li>
+              <li>
+                <a href="/services/private-chef" class="text-gray-400 hover:text-healthgreen-500 transition-colors">
+                  Private Chef Services
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Contact Info -->
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Contact Us</h4>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <i class="fa-solid fa-location-dot text-healthgreen-500 mr-3 mt-1 shrink-0"></i>
+                <span class="text-gray-400">
+                 Mib Plaza, Gwarinpa, 
+                  <br /> Abuja 90210, Nigeria
+                </span>
+              </li>
+              <li class="flex items-center">
+                <i class="fa-solid fa-phone text-healthgreen-500 mr-3 shrink-0"></i>
+                <span class="text-gray-400">(234) 8122-5677-99</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fa-solid fa-envelope text-healthgreen-500 mr-3 shrink-0"></i>
+                <span class="text-gray-400">info@thehealthyclub.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="mt-12 pt-8 border-t border-gray-800 text-center md:flex md:justify-between md:items-center">
+          <p class="text-gray-500 mb-4 md:mb-0">
+            © <span id="current-year">2025</span> The Healthy Club. All rights reserved.
+          </p>
+          <div class="flex flex-wrap justify-center md:justify-end space-x-6">
+            <a href="/privacy-policy" class="text-gray-500 hover:text-healthgreen-500 transition-colors">
+              Privacy Policy
+            </a>
+            <a href="/terms-of-service" class="text-gray-500 hover:text-healthgreen-500 transition-colors">
+              Terms of Service
+            </a>
+            <a href="/faq" class="text-gray-500 hover:text-healthgreen-500 transition-colors">
+              FAQ
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Wait for the DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set current year in footer
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+      
+      // Navbar scroll effect
+      const navbar = document.querySelector('nav');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 10) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+      
+      // Mobile menu toggle
+      const mobileMenuBtn = document.querySelector('.md\\:hidden.text-foreground');
+      const mobileMenu = document.querySelector('.md\\:hidden.bg-white');
+      const menuIcon = mobileMenuBtn.querySelector('i');
+      
+      mobileMenuBtn.addEventListener('click', function() {
+        if (mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.remove('hidden');
+          menuIcon.classList.remove('fa-bars');
+          menuIcon.classList.add('fa-times');
+        } else {
+          mobileMenu.classList.add('hidden');
+          menuIcon.classList.add('fa-bars');
+          menuIcon.classList.remove('fa-times');
+        }
+      });
+      
+      // Close mobile menu when clicking a link
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.add('hidden');
+          menuIcon.classList.add('fa-bars');
+          menuIcon.classList.remove('fa-times');
+        });
+      });
+      
+      // Hero Slider
+      const slides = document.querySelectorAll('.hero-slider-container > div[class*="opacity"]');
+      const indicators = document.querySelectorAll('.absolute.bottom-8 button');
+      const prevBtn = document.querySelector('.absolute.left-4.top-1\\/2');
+      const nextBtn = document.querySelector('.absolute.right-4.top-1\\/2');
+      let currentSlide = 0;
+      let slideInterval;
+      
+      // Function to show a specific slide
+      function showSlide(index) {
+        // Reset all slides
+        slides.forEach(slide => {
+          slide.classList.remove('opacity-100', 'z-10');
+          slide.classList.add('opacity-0', 'z-0');
+        });
+        
+        // Reset all indicators
+        indicators.forEach(indicator => {
+          indicator.classList.remove('bg-healthgreen-500');
+          indicator.classList.add('bg-white/50');
+        });
+        
+        // Handle index wrapping
+        if (index >= slides.length) index = 0;
+        if (index < 0) index = slides.length - 1;
+        
+        currentSlide = index;
+        
+        // Activate current slide and indicator
+        slides[currentSlide].classList.remove('opacity-0', 'z-0');
+        slides[currentSlide].classList.add('opacity-100', 'z-10');
+        indicators[currentSlide].classList.remove('bg-white/50');
+        indicators[currentSlide].classList.add('bg-healthgreen-500');
+      }
+      
+      // Initialize the slider with the first slide
+      showSlide(currentSlide);
+      
+      // Set up auto-sliding
+      function startSlideInterval() {
+        slideInterval = setInterval(() => {
+          showSlide(currentSlide + 1);
+        }, 5000); // Change slide every 5 seconds
+      }
+      
+      function resetSlideInterval() {
+        clearInterval(slideInterval);
+        startSlideInterval();
+      }
+      
+      startSlideInterval();
+      
+      // Event listeners for navigation
+      prevBtn.addEventListener('click', () => {
+        showSlide(currentSlide - 1);
+        resetSlideInterval();
+      });
+      
+      nextBtn.addEventListener('click', () => {
+        showSlide(currentSlide + 1);
+        resetSlideInterval();
+      });
+      
+      // Set up indicators
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+          showSlide(index);
+          resetSlideInterval();
+        });
+      });
+      
+      // Pause auto-sliding when hovering over the slider
+      const slider = document.querySelector('.hero-slider-container');
+      slider.addEventListener('mouseenter', () => {
+        clearInterval(slideInterval);
+      });
+      
+      slider.addEventListener('mouseleave', () => {
+        startSlideInterval();
+      });
+      
+      // Animation on scroll
+      function animateOnScroll() {
+        const elements = document.querySelectorAll('.subscription-plans, .dietician-intro, .team-section, .partners-section, .blog-section');
+        
+        elements.forEach(element => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          
+          if (elementPosition < windowHeight - 100) {
+            element.classList.add('animated');
+          }
+        });
+      }
+      
+      // Run on scroll
+      window.addEventListener('scroll', animateOnScroll);
+      // Run once on page load
+      animateOnScroll();
+      
+      // Add hover effects to cards
+      const cards = document.querySelectorAll('.subscription-card, .bg-white.rounded-xl.overflow-hidden.shadow-lg, .bg-white.rounded-xl.overflow-hidden.shadow-lg');
+      cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-10px)';
+          this.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+          this.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+        });
+      });
+    });
+  </script>
+<script>
+    function toggleBio(member) {
+        const bio = document.getElementById(`bio-${member}`);
+        const fullBio = document.getElementById(`full-bio-${member}`);
+        
+        if (fullBio.classList.contains('hidden')) {
+            fullBio.classList.remove('hidden');
+        } else {
+            fullBio.classList.add('hidden');
+        }
+    }
+</script>
+</body>
+</html>
